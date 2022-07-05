@@ -1,0 +1,78 @@
+<sb-layout-dashboard>
+  <sb-dashboard-head title="Usuario" [hideBreadcrumbs]="false"></sb-dashboard-head>
+  <sb-card>
+    <div class="card-body">
+      <h1 *ngIf="isAddMode">Agregar Usuario</h1>
+      <h1 *ngIf="!isAddMode">Editar Usuario</h1>
+      <form class="formEdit" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <mat-label>USUARIO</mat-label>
+                <input type="text" formControlName="username" class="form-control" autofocus [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Ingrese el usuario</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="isAddMode">
+            <div class="col-12">
+              <div class="form-group">
+                <mat-label>CONTRASEÑAS</mat-label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Ingrese contraseña</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="isAddMode">
+            <div class="col-12">
+              <div class="form-group">
+                <mat-label>CONFIRME PASSWORD</mat-label>
+                <input type="password" formControlName="password2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password2.errors }" />
+                <div *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+                    <div *ngIf="f.password2.errors.required">Confirme la contraseña</div>
+                </div>
+              </div>
+            </div>
+            <div class="col text-danger">
+              <p *ngIf="contrasenasNoValidas()">* Las contraseñas deben de ser iguales</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <mat-label>ROLES</mat-label>
+              <div class="form-group" *ngFor="let r of roles; let i=index" class="col-md-2">
+                <label class="maxContent">
+                  <input type="checkbox" [value]="r.nombre" (change)="onCheckChange($event)">
+                  {{r.nombre}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <mat-label>ESTATUS</mat-label>
+              <div class="form-group" class="col-md-2">
+                <label class="maxContent">
+                  <input type="checkbox" formControlName="vigente">
+                  Vigente
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row">
+            <button [disabled]="loading" class="btn btn-primary btn-block">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    <div class="card-footer small text-muted">Actualizado ayer a las 11:59 PM</div>
+  </sb-card>
+</sb-layout-dashboard>
