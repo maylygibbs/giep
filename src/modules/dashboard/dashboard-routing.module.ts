@@ -17,7 +17,7 @@ export const ROUTES: Routes = [
     {
         path: '',
         data: {
-            title: 'Dashboard - YCarsSystem',
+            title: 'Dashboard - GIEP',
             breadcrumbs: [
                 {
                     text: 'Dashboard',

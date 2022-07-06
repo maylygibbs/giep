@@ -24,7 +24,7 @@ export const ROUTES: Routes = [
         canActivate: [],
         component: authContainers.LoginComponent,
         data: {
-            title: 'Pages Login - YCarsSystem',
+            title: 'Page Login - GIEP',
         } as SBRouteData,
     },
     {
@@ -32,7 +32,7 @@ export const ROUTES: Routes = [
         canActivate: [],
         component: authContainers.ForgotPasswordComponent,
         data: {
-            title: 'Pages Forgot Password - YCarsSystem',
+            title: 'Pages Forgot Password - GIEP',
         } as SBRouteData,
     },
 ];

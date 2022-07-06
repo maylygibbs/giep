@@ -22,8 +22,17 @@
 
 @import '~material-design-icons/iconfont/material-icons.css';
 
+
+@font-face {
+    font-family: "Arial";
+    src: url(/assets/fonts/arial.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Arial"; }
 
 .edit-color {
     color: blue;
@@ -35,4 +44,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: red;
     border: 0;
     background: transparent;
+}
+
+.bg-primary {
+    background-color: white !important;
+}
+
+.giep-typography {
+    font: 400 14px/20px "Arial";
+    letter-spacing: normal;
 }
