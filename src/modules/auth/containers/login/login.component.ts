@@ -1,3 +1,6 @@
+import { UserService } from './../../../auth/services/user.service';
+
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,7 +24,8 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authService: AuthService
+        private authService: AuthService,
+        private userService: UserService
     ) {
         // redirect to home if already logged in
         if (this.authService.currentUserValue) {
@@ -54,12 +58,14 @@ export class LoginComponent implements OnInit {
             .login(this.f.username.value, this.f.password.value)
             .pipe(first())
             .subscribe({
-                next: () => {
+                next: async() => {
                     console.log('aqui');
                     // get return url from route parameters or default to '/'
-                    const returnUrl = this.route.snapshot.queryParams.returnUrl || '/dashboard';
+                    
+                    const returnUrl = this.route.snapshot.queryParams.returnUrl || '/regular';
                     this.router.navigate([returnUrl]);
-                    localStorage.setItem('user', this.f.username.value);
+                    const user = await this.userService.getInfoUser();
+                    localStorage.setItem('user', JSON.stringify(user));
                 },
                 error: error => {
                     console.log(error.name);

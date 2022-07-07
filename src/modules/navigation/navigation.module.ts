@@ -21,13 +21,14 @@ import * as navigationGuards from './guards';
 /* Services */
 import * as navigationServices from './services';
 
+
 @NgModule({
     imports: [CommonModule, RouterModule, AppCommonModule],
     providers: [...navigationServices.services, ...navigationGuards.guards],
     declarations: [
         ...navigationContainers.containers,
         ...navigationComponents.components,
-        ...appCommonLayouts.layouts,
+        ...appCommonLayouts.layouts
     ],
     exports: [
         ...navigationContainers.containers,

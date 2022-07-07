@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://ytallerbackend:8090',
+    apiUrl: 'http://giepboffice.pafar.com.ve/public/api',
 };

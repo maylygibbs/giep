@@ -1,0 +1,153 @@
+<sb-layout-dashboard-regular>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <section *ngIf="section == 1">
+              <div class="row">
+                <div class="col-lg-12 bg-1">
+                  <div class="row px-4">
+                    <div class="col-lg-12 text-center">
+                      <img style="width:23%" src="assets/img/Valores-corporativos-menu_24.jpg">
+                    </div>
+                    <div class="col-lg-12 text-center">
+                      <img style="width:28%" src="assets/img/Valores-corporativos-menu_103.jpg">
+                    </div>
+                    <div class="col-lg-12 mt-4 text-center">
+                      <button (click)="nextSection()">Siquiente</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section *ngIf="section == 2">
+              <div class="row">
+                <div class="col-lg-12 bg-2">
+                  <div class="row px-4">
+                    <div class="col-lg-12 text-center">
+                      <img style="width:100%" src="assets/img/Valores-corporativos-menu_27.jpg">
+                    </div>
+                    <div class="col-lg-12 mt-4 text-center">
+                      <button (click)="nextSection()">Siquiente</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section *ngIf="section == 3">
+              <div class="row">
+                <div class="col-lg-12 bg-3">
+                  <div class="row px-4">
+                    <div class="col-lg-12 text-center">
+                      <img style="width:50%" src="assets/img/Valores-corporativos-menu_08.jpg">
+                    </div>
+                    <div class="col-lg-12 text-center mt-5">
+                      <div class="row">
+                        <div *ngFor="let option of questions[0].options" class="col-lg-12">
+                          <mat-label></mat-label>
+                          <div class="form-group" class="col-md-12">
+                            <label class="maxContent">
+                              <input type="checkbox" [(ngModel)]="option.selected" [disabled]="option.disabled" (change)="onCahngeQ1($event)" [value]="option.label">
+                              <span>{{option.label}}</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 mt-4 text-center">
+                        <button (click)="validateQ1()">Siquiente</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section *ngIf="section == 4">
+              <div class="row">
+                <div class="col-lg-12 bg-4">
+                  <div class="row px-4">
+                    <div class="col-lg-12 text-center">
+                      <img style="width:60%" src="assets/img/Valores-corporativos-menu_11.jpg">
+                    </div>
+                    <div class="col-lg-12 text-center mt-5">
+                      <div class="row">
+                        <div *ngFor="let option of questions[1].options" class="col-lg-12">
+                          <mat-label></mat-label>
+                          <div class="form-group" class="col-md-12">
+                            <label class="maxContent">
+                              <input type="checkbox" [(ngModel)]="option.selected" [value]="option.label">
+                              <span>{{option.label}}</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-lg-12 mt-4 text-center">
+                          <button (click)="validateQ2()">Siquiente</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section *ngIf="section == 5">
+              <div class="row">
+                <div class="col-lg-12 bg-5">
+                  <div class="row px-4">
+                    <div class="col-lg-12 text-center">
+                      <img style="width:50%" src="assets/img/Valores-corporativos-menu_14.jpg">
+                    </div>
+                    <div class="col-lg-12 text-center mt-5">
+                      <div class="row">
+                        <div *ngFor="let option of questions[2].options" class="col-lg-12">
+                          <mat-label></mat-label>
+                          <div class="form-group" class="col-md-12">
+                            <label class="maxContent">
+                              <input type="checkbox" [(ngModel)]="option.selected" [value]="option.label">
+                              <span>{{option.label}}</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 mt-4 text-center">
+                        <button (click)="validateQ3()">Siquiente</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section *ngIf="section == 6">
+              <div class="row">
+                <div class="col-lg-12 bg-6">
+                  <div class="row px-4">
+                    <div class="col-lg-12 text-center">
+                      <img style="width:50%" src="assets/img/Valores-corporativos-menu_17.jpg">
+                    </div>
+                    <div class="col-lg-12 text-center mt-5">
+                      <div class="row">
+                        <div *ngFor="let option of questions[3].options" class="col-lg-12">
+                          <mat-label></mat-label>
+                          <div class="form-group" class="col-md-12">
+                            <label class="maxContent">
+                              <input type="checkbox" [(ngModel)]="option.selected" [value]="option.label">
+                              <span>{{option.label}}</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 mt-4 text-center">
+                        <button click="validateQ4()">Finalizar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</sb-layout-dashboard-regular>

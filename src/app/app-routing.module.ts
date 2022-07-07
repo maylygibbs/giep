@@ -45,6 +45,20 @@ const routes: Routes = [
             import('@modules/utility/utility-routing.module').then(m => m.UtilityRoutingModule),
     },
     {
+        path: 'regular',
+        loadChildren: () =>
+            import('@modules/dashboard-regular/dashboard-regular-routing.module').then(
+                m => m.DashboardRegularRoutingModule
+            ),
+    },
+    {
+        path: 'values-menu',
+        loadChildren: () =>
+            import('@modules/values-menu/values-menu-routing.module').then(
+                m => m.ValuesMenuRoutingModule
+            ),
+    },
+    {
         path: '**',
         pathMatch: 'full',
         loadChildren: () =>
