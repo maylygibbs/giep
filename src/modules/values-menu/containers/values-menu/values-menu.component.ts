@@ -1,3 +1,4 @@
+import { AuthService } from '@modules/auth/services/auth.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -15,7 +16,8 @@ export class ValuesMenuComponent implements OnInit {
   public step:number = 1;
   public section: number = 1;
 
-  constructor(private valuesMenuService:ValuesMenuService) { }
+  constructor(private valuesMenuService:ValuesMenuService,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
     console.log('questions', this.questions)
@@ -186,6 +188,10 @@ export class ValuesMenuComponent implements OnInit {
       this.valuesMenuService.saveValuesMenu({respuestas: responses});
       this.nextSection();
     }
+  }
+
+  ngOnDestroy(){
+    this.authService.logout()
   }
 
 }
