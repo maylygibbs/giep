@@ -35,6 +35,7 @@ export class UserService extends HttpService {
             username: user.username+'AAAA',
             role: user.role
         }
+        localStorage.setItem('user', JSON.stringify(user));
         return user;
     }
 }

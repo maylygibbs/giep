@@ -19,18 +19,24 @@ export class LoginComponent implements OnInit {
     submitted = false;
     loading = false;
     error = '';
+    returnUrl = undefined;
 
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
         private authService: AuthService,
-        private userService: UserService
+        private userService: UserService,
+        private activatedRoute: ActivatedRoute
     ) {
         // redirect to home if already logged in
         if (this.authService.currentUserValue) {
             this.router.navigate(['/auth/login']);
         }
+        this.activatedRoute.queryParams.subscribe((param) => {
+            console.log(param.returnUrl);
+            this.returnUrl = param.returnUrl;
+          })
 
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
@@ -38,7 +44,9 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+       
+    }
 
     // convenience getter for easy accemessageelds
     get f() {
@@ -61,11 +69,17 @@ export class LoginComponent implements OnInit {
                 next: async() => {
                     console.log('aqui');
                     // get return url from route parameters or default to '/'
-                    
-                    const returnUrl = this.route.snapshot.queryParams.returnUrl || '/regular';
-                    this.router.navigate([returnUrl]);
+                    debugger
+                    let returnUrl;
                     const user = await this.userService.getInfoUser();
-                    localStorage.setItem('user', JSON.stringify(user));
+                    if (this.authService.isAdmin()) {
+                        returnUrl = '/dashboard';
+                    }else{
+                        returnUrl = this.returnUrl || '/regular';
+                    }
+                    this.router.navigate([returnUrl]);
+                    
+                    
                 },
                 error: error => {
                     console.log(error.name);

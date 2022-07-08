@@ -22,6 +22,14 @@ export class AuthService {
         return this.currentUserSubject.value;
     }
 
+    public get token():string | null{
+        const info = localStorage.getItem('currentUser') || null;
+        if (info) {
+            return JSON.parse(info).token;
+        }
+        return null;
+    }
+
     login(username: string, password: string) {
         return this.http
             .post<any>(`${environment.apiUrl}/login_check`, { username, password })
@@ -39,5 +47,24 @@ export class AuthService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
+    }
+
+
+    isLoggedIn(): boolean {
+        const currentUser = localStorage.getItem('currentUser') || null;
+        if(currentUser){
+          return true;      
+        }
+        return false;
+        
+      }
+
+    isAdmin():boolean{
+        const info = localStorage.getItem('user') || null;
+        if (info) {
+           const user = JSON.parse(info); 
+           return !user.role.includes('ROLE_REGULAR');
+        }
+        return false;
     }
 }

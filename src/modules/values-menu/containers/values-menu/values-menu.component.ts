@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 
 import { questions } from '@modules/values-menu/data';
+import { ValuesMenuService } from '@modules/values-menu/services/values-menu.service';
 
 @Component({
   selector: 'sb-values-menu',
@@ -10,9 +12,10 @@ import { questions } from '@modules/values-menu/data';
 export class ValuesMenuComponent implements OnInit {
 
   public questions = questions;
+  public step:number = 1;
   public section: number = 1;
 
-  constructor() { }
+  constructor(private valuesMenuService:ValuesMenuService) { }
 
   ngOnInit(): void {
     console.log('questions', this.questions)
@@ -44,6 +47,7 @@ export class ValuesMenuComponent implements OnInit {
   }
 
   onCahngeQ2(event: any){
+    
     const options = this.questions[1].options;
     let count = 0;
     options.forEach((element:any) => {
@@ -120,19 +124,68 @@ export class ValuesMenuComponent implements OnInit {
   }
 
   validateQ1(){
-    this.nextSection();
+
+    const options = this.questions[0].options;
+    let count = 0;
+    options.forEach((element:any) => {
+      if (element.selected==true) {
+        count++;
+      }
+    });
+    if (count == 2) {
+      this.nextSection();
+    }
+    
   }
 
   validateQ2(){
-    this.nextSection();
+    const options = this.questions[1].options;
+    let count = 0;
+    options.forEach((element:any) => {
+      if (element.selected==true) {
+        count++;
+      }
+    });
+    if (count == 2) {
+      this.nextSection();
+    }
   }
 
   validateQ3(){
-    this.nextSection();
+    const options = this.questions[2].options;
+    let count = 0;
+    options.forEach((element:any) => {
+      if (element.selected==true) {
+        count++;
+      }
+    });
+    if (count == 2) {
+      this.nextSection();
+    }
   }
 
   validateQ4(){
-    this.nextSection();
+    
+    const options = this.questions[3].options;
+    let count = 0;
+    options.forEach((element:any) => {
+      if (element.selected==true) {
+        count++;
+      }
+    });
+    if (count == 2) {
+      let responses:any[] = [];
+      this.questions.forEach((question:any)=>{
+        question.options.forEach((option:any) => {
+          if (option.selected == true) {
+            responses.push({IdOpcionRespuesta: option.IdOpcionRespuesta}) ;
+          }
+        });
+      });
+      console.log('responses', {responses: responses} );
+      this.valuesMenuService.saveValuesMenu({respuestas: responses});
+      this.nextSection();
+    }
   }
 
 }

@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationModule } from '@modules/navigation/navigation.module';
-
+import { RouterModule } from '@angular/router';
 
 
 /* Containers */
 import * as dashboardRegularContainers from './containers';
-import { RouterModule } from '@angular/router';
+
+
+/* Guards */
+import * as dashboardRegularGuards from './guards';
 
 @NgModule({
   declarations: [...dashboardRegularContainers.containers],
@@ -15,6 +18,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     NavigationModule
   ],
+  providers: [...dashboardRegularGuards.guards],
   exports: [...dashboardRegularContainers.containers]
 })
 export class DashboardRegularModule { }

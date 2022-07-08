@@ -5,6 +5,7 @@ import { SBRouteData } from '@modules/navigation/models';
 
 /* Containers */
 import * as dashboardRegularContainers from './containers';
+import { RegularGuard } from './guards';
 
 export const routes: Routes = [
     {
@@ -18,7 +19,7 @@ export const routes: Routes = [
               },
           ],
       } as SBRouteData,
-      canActivate: [],
+      canActivate: [RegularGuard],
       component: dashboardRegularContainers.DashboardRegularComponent,
   }
 ];
