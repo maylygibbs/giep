@@ -15,9 +15,9 @@ export class RegularGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       console.log('route.url',state.url);
-      if (this.auth.isLoggedIn()) {
+      if (this.auth.isLoggedIn() && !this.auth.isAdmin()) {
         return true;
-      }
+      } 
       this.router.navigate(['/auth/login'],{queryParams:{returnUrl:state.url}});
       return false;
   }

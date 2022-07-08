@@ -3,12 +3,12 @@ import { SideNavItems, SideNavSection } from '@modules/navigation/models';
 export const sideNavSections: SideNavSection[] = [
     {
         text: 'ADMIN',
-        items: ['cliente','user', 'rol', 'state', 'city', 'dashboard'],
+        items: [/*'cliente','user', 'rol', 'state', 'city', */'dashboard'],
     },
-    {
+    /*{
         text: 'INTERFACE',
         items: ['layouts', 'pages'],
-    },
+    },*/
 ];
 
 export const sideNavItems: SideNavItems = {

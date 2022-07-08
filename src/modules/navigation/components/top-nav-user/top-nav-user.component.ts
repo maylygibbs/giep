@@ -9,9 +9,15 @@ import { Router} from '@angular/router';
     styleUrls: ['top-nav-user.component.scss'],
 })
 export class TopNavUserComponent implements OnInit {
+
+    user!:any;
+
     constructor(public userService: UserService, private router: Router,) {}
     
-    ngOnInit() {}
+    ngOnInit() {
+        const info = localStorage.getItem('user') || null;
+        this.user = info ? JSON.parse(info) : null;
+    }
 
     doLogout() {
         localStorage.removeItem('user');

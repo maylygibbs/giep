@@ -67,9 +67,9 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: async() => {
-                    console.log('aqui');
+
                     // get return url from route parameters or default to '/'
-                    debugger
+                    
                     let returnUrl;
                     const user = await this.userService.getInfoUser();
                     if (this.authService.isAdmin()) {
@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
                         returnUrl = this.returnUrl || '/regular';
                     }
                     this.router.navigate([returnUrl]);
-                    
+                    this.loading = false;
                     
                 },
                 error: error => {

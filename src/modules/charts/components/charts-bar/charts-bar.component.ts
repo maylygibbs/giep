@@ -1,8 +1,10 @@
+import { DashboardService } from './../../../dashboard/services/dashboard.service';
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
     Component,
     ElementRef,
+    Input,
     OnInit,
     ViewChild,
 } from '@angular/core';
@@ -18,20 +20,51 @@ export class ChartsBarComponent implements OnInit, AfterViewInit {
     @ViewChild('myBarChart') myBarChart!: ElementRef<HTMLCanvasElement>;
     chart!: Chart;
 
-    constructor() {}
-    ngOnInit() {}
+    @Input()
+    questionTitle!:string
 
-    ngAfterViewInit() {
+    @Input()
+    questionId!: number;
+
+    @Input()
+    color!:string
+
+    labels!:string[];
+    values!:number[];
+
+    constructor(private dashboardService:DashboardService) {}
+    async ngOnInit() {
+        console.log('questionId',this.questionId)
+        console.log('color',this.color);
+        const resp = await this.dashboardService.getValuesMenu(this.questionId);
+        this.labels = resp.map((item:any)=>{
+            return item.Respuesta
+        });
+        this.values = resp.map((item:any)=>{
+            return parseInt(item.total);
+        });
+    }
+
+    async ngAfterViewInit() {
+        const resp = await this.dashboardService.getValuesMenu(this.questionId);
+
+        this.labels = resp.map((item:any)=>{
+            return item.Respuesta
+        });
+        this.values = resp.map((item:any)=>{
+            return parseInt(item.total);
+        });
+
         this.chart = new Chart(this.myBarChart.nativeElement, {
             type: 'bar',
             data: {
-                labels: ['GRATIDUD', 'HUMILDAD', 'SOLIDARIDAD', 'INTEGRIDAD'],
+                labels: this.labels,
                 datasets: [
                     {
-                        label: 'ENTRADAS',
-                        backgroundColor: 'rgba(2,117,216,1)',
-                        borderColor: 'rgba(2,117,216,1)',
-                        data: [4215, 5312, 6251, 7841],
+                        label: this.questionTitle,
+                        backgroundColor: this.color,
+                        borderColor: this.color,
+                        data: this.values ,
                     },
                 ],
             },
@@ -50,18 +83,7 @@ export class ChartsBarComponent implements OnInit, AfterViewInit {
                             },
                         },
                     ],
-                    yAxes: [
-                        {
-                            ticks: {
-                                min: 0,
-                                max: 15000,
-                                maxTicksLimit: 5,
-                            },
-                            gridLines: {
-                                display: true,
-                            },
-                        },
-                    ],
+
                 },
                 legend: {
                     display: false,
