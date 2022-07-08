@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'http://giepboffice.pafar.com.ve/public/api',
+    apiUrl: 'https://giepboffice.pafar.com.ve/public/api',
 };
 
 /*
