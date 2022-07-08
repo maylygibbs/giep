@@ -1,167 +1,135 @@
-.bg-1{
-    background-image: url('../../../../assets/img/1350-x-600-1.png');
+.bg-1 {
+    background-image: url("../../../../assets/img/1350-x-600-1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
-    .l1{
+    .l1 {
         margin-top: 13%;
     }
-    img{
-        width: 24%;
-    }
-
-}
-
-.bg-2{
-    background-image: url('../../../../assets/img/1350-x-600-2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
-    .l2{
-        margin-top: 14%;
-    }
-    img{
+    img {
         width: 24%;
     }
 }
 
-.bg-3{
-    background-image: url('../../../../assets/img/1350-x-600-3.png');
+.bg-2 {
+    background-image: url("../../../../assets/img/1350-x-600-2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
-    .l3{
+    .l2 {
         margin-top: 14%;
     }
-    span{
-        color: black; 
-        font-family: "Arial";
-        font-size: 20px; 
-        font-weight: bold;
-        font-style: italic;
-        margin-left: 10px;
-        background: -webkit-linear-gradient(#fdc112, rgb(51, 51, 51));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding-right: 2px;
-    }
-    .div-label{
-        width: 15%; margin: auto;
+    img {
+        width: 24%;
     }
 }
 
-.bg-4{
-    background-image: url('../../../../assets/img/1350-x-600-4.png');
+.bg-3 {
+    background-image: url("../../../../assets/img/1350-x-600-3.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
-    .l4{
+    .l3 {
         margin-top: 14%;
     }
-    span{
-        color: #fdc112;
-        font-family: "Arial";
-        font-size: 20px; 
-        font-weight: bold;
-        font-style: italic;
-        margin-left: 10px;
-        background: -webkit-linear-gradient(#fdc112, #333);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding-right: 2px;
-    }
-    .div-label{
-        width: 15%; 
+
+    .div-label {
+        width: 15%;
         margin: auto;
     }
 }
 
-.bg-5{
-    background-image: url('../../../../assets/img/1350-x-600-5.png');
+.bg-4 {
+    background-image: url("../../../../assets/img/1350-x-600-4.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
-    .l5{
+    .l4 {
         margin-top: 14%;
     }
-    span{
-        color: black; 
-        font-family: "Arial";
-        font-size: 20px; 
-        font-weight: bold;
-        font-style: italic;
-        margin-left: 10px;
-        margin-left: 10px;
-        background: -webkit-linear-gradient(#fdc112, #333);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding-right: 2px;
-    }
-    .div-label{
-        width: 15%; margin: auto;
+
+    .div-label {
+        width: 15%;
+        margin: auto;
     }
 }
 
-.bg-6{
-    background-image: url('../../../../assets/img/1350-x-600-6.png');
+.bg-5 {
+    background-image: url("../../../../assets/img/1350-x-600-5.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
-    .l6{
+    .l5 {
         margin-top: 14%;
     }
-    span{
-        color: #fdc112; 
-        font-family: "Arial";
-        font-size: 20px; 
-        font-weight: bold;
-        font-style: italic;
-        margin-left: 10px;
-        margin-left: 10px;
-        background: -webkit-linear-gradient(#fdc112, #333);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding-right: 2px;
-    }
-    .div-label{
-        width: 15%; margin: auto;
+
+    .div-label {
+        width: 15%;
+        margin: auto;
     }
 }
 
-.bg-7{
-    background-image: url('../../../../assets/img/1350-x-600-7.png');
+.bg-6 {
+    background-image: url("../../../../assets/img/1350-x-600-6.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
-    .l7{
+    .l6 {
+        margin-top: 14%;
+    }
+
+    .div-label {
+        width: 15%;
+        margin: auto;
+    }
+}
+
+.bg-7 {
+    background-image: url("../../../../assets/img/1350-x-600-7.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    .l7 {
         margin-top: 14%;
     }
 }
 
+span {
+    color: black;
+    font-family: "Arial";
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 10px;
+    background: -webkit-linear-gradient(#fdc112, rgb(51, 51, 51));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 2px;
+}
 
 .btn-yellow {
     color: black;
     font-family: "Arial";
     font-size: 15px;
-    font-weight: bold; 
+    font-weight: bold;
     background-color: #fdc112;
     border-color: #fdc112;
 }
 
 input[type="checkbox"] {
-    accent-color: #fdc112
+    accent-color: #fdc112;
 }
 
-p{
+p {
     font-size: 25px;
-    font-family: 'Arial';
+    font-family: "Arial";
     font-weight: bold;
     font-style: italic;
     background: -webkit-linear-gradient(#fdc112, rgb(26, 25, 25));
@@ -170,4 +138,318 @@ p{
     padding: 5px;
 }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
 
+    .bg-1 {
+        .l1 {
+            margin-top: 62%;
+        }
+        img {
+            width: 61%;
+        }
+    }
+
+    .bg-2 {
+        .l2 {
+            margin-top: 68%;
+        }
+        img {
+            width: 65%;
+        }
+    }
+
+    .bg-3 {
+        .l3 {
+            margin-top: 68%;
+        }
+        img {
+            width: 65% !important;
+        }
+        .div-label {
+            width: 50%;
+        }
+    }
+
+    .bg-4 {
+        .l4 {
+            margin-top: 63%;
+        }
+        img {
+            width: 65% !important;
+        }
+        .div-label {
+            width: 69%;
+        }
+    }
+
+    .bg-5 {
+        .l5 {
+            margin-top: 65%;
+        }
+        img {
+            width: 77% !important;
+        }
+        .div-label {
+            width: 65%;
+        }
+    }
+    .bg-6 {
+        .l6 {
+            margin-top: 68%;
+        }
+        img {
+            width: 59% !important;
+        }
+        .div-label {
+            width: 50%;
+        }
+    }
+    .bg-7 {
+        .l7 {
+            margin-top: 60%;
+        }
+    }
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+    /* Styles */
+    .bg-1 {
+        .l1 {
+            margin-top: 100%;
+        }
+        img {
+            width: 80%;
+        }
+    }
+
+    .bg-2 {
+        .l2 {
+            margin-top: 100%;
+        }
+        img {
+            width: 80%;
+        }
+    }
+
+    .bg-3 {
+        .l3 {
+            margin-top: 68%;
+        }
+        img {
+            width: 65% !important;
+        }
+        .div-label {
+            width: 80%;
+        }
+    }
+
+    .bg-4 {
+        .l4 {
+            margin-top: 63%;
+        }
+        img {
+            width: 65% !important;
+        }
+        .div-label {
+            width: 90%;
+        }
+        span{
+            font-size: 15px;
+        }
+    }
+
+    .bg-5 {
+        .l5 {
+            margin-top: 65%;
+        }
+        img {
+            width: 95% !important;
+        }
+        .div-label {
+            width: 100%;
+        }
+        span{
+            font-size: 19px;
+        }
+    }
+    .bg-6 {
+        .l6 {
+            margin-top: 68%;
+        }
+        img {
+            width: 59% !important;
+        }
+        .div-label {
+            width: 100%;
+        }
+    }
+    .bg-7 {
+        .l7 {
+            margin-top: 65%;
+        }
+    }
+}
+
+
+/* tables (landscape) ----------- */
+@media only screen and (min-width: 542px) and (max-width: 1023px) {
+    .bg-1 {
+        .l1 {
+            margin-top: 23%;
+        }
+        img {
+            width: 34%;
+        }
+    }
+
+    .bg-2 {
+        .l2 {
+            margin-top: 27%;
+        }
+        img {
+            width: 40%;
+        }
+    }
+
+    .bg-3 {
+        .l3 {
+            margin-top: 23%;
+        }
+        img {
+            width: 50% !important;
+        }
+        .div-label {
+            width: 25%;
+        }
+    }
+
+    .bg-4 {
+        .l4 {
+            margin-top: 27%;
+        }
+        img {
+            width: 40% !important;
+        }
+        .div-label {
+            width: 25%;
+        }
+        span{
+            font-size: 20px;
+        }
+    }
+
+    .bg-5 {
+        .l5 {
+            margin-top: 28%;
+        }
+        img {
+            width: 68% !important;
+        }
+        .div-label {
+            width: 27%;
+        }
+        span{
+            font-size: 20px;;
+        }
+    }
+    .bg-6 {
+        .l6 {
+            margin-top: 27%;
+        }
+        img {
+            width: 40% !important;
+        }
+        .div-label {
+            width: 25%;
+        }
+    }
+    .bg-7 {
+        .l7 {
+            margin-top: 29%;
+        }
+    }
+}
+
+
+/* tables (landscape) ----------- */
+@media only screen and (min-width: 540px) and (max-width: 540px) {
+    .bg-1 {
+        .l1 {
+            margin-top: 36%;
+        }
+        img {
+            width: 40%;
+        }
+    }
+
+    .bg-2 {
+        .l2 {
+            margin-top: 37%;
+        }
+        img {
+            width: 46%;
+        }
+    }
+
+    .bg-3 {
+        .l3 {
+            margin-top: 36%;
+        }
+        img {
+            width: 50% !important;
+        }
+        .div-label {
+            width: 31%;
+        }
+    }
+
+    .bg-4 {
+        .l4 {
+            margin-top: 35%;
+        }
+        img {
+            width: 40% !important;
+        }
+        .div-label {
+            width: 38%;
+        }
+        span{
+            font-size: 20px;
+        }
+    }
+
+    .bg-5 {
+        .l5 {
+            margin-top: 39%;
+        }
+        img {
+            width: 68% !important;
+        }
+        .div-label {
+            width: 40%;
+        }
+        span{
+            font-size: 20px;;
+        }
+    }
+    .bg-6 {
+        .l6 {
+            margin-top: 35%;
+        }
+        img {
+            width: 40% !important;
+        }
+        .div-label {
+            width: 35%;
+        }
+    }
+    .bg-7 {
+        .l7 {
+            margin-top: 35%;
+        }
+    }
+}
